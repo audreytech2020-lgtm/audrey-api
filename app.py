@@ -13,7 +13,6 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 def home():
     return render_template("index.html")
 
-# 🔥 اینو اضافه کن
 @app.route("/app")
 def app_page():
     return render_template("app.html")
