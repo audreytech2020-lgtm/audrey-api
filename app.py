@@ -24,7 +24,7 @@ def convert():
 
     output_pdf = process_video(filepath)
 
-    return send_file(output_pdf, as_attachment=True)
+    return send_file(output_pdf, as_attachment=True, download_name="output.pdf")
 
 def process_video(path):
     from PIL import Image
