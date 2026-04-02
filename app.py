@@ -27,7 +27,6 @@ def convert():
     return send_file(output_pdf, as_attachment=True)
 
 def process_video(path):
-    # تستی (فعلا PDF ساده میسازه)
     from PIL import Image
     output_path = os.path.join(OUTPUT_FOLDER, "test.pdf")
     img = Image.new("RGB", (500, 500), color=(0, 0, 0))
@@ -35,4 +34,5 @@ def process_video(path):
     return output_path
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))  # 🔥 مهم
+    app.run(host="0.0.0.0", port=port)
