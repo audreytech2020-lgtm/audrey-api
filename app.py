@@ -1,5 +1,8 @@
+from flask import render_template
+
 from flask import Flask, request, send_file
 import os
+
 
 app = Flask(__name__)
 
@@ -11,7 +14,7 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 @app.route("/")
 def home():
-    return "Audrey Tech API is running 🚀"
+    return render_template("index.html")
 
 @app.route("/convert", methods=["POST"])
 def convert():
