@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audrey Tech</title>
+
+    <style>
+        body {
+            background: #0F1419;
+            color: white;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .header {
+            background: #1A1F2E;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #9D4EDD;
+        }
+
+        .header h1 {
+            color: #00D4FF;
+            margin: 0;
+        }
+
+        .container {
+            width: 70%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .section {
+            background: #1A1F2E;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            color: #00D4FF;
+        }
+
+        .box {
+            background: #0F1419;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn-blue {
+            background: #00D4FF;
+            color: black;
+        }
+
+        .btn-pink {
+            background: #FF006E;
+            color: white;
+        }
+
+        .btn-green {
+            background: #00D084;
+            color: black;
+            font-weight: bold;
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🚀 AUDREY TECH</h1>
+    <p>Video Lecture to Slides Converter</p>
+</div>
+
+<div class="container">
+
+    <form action="/convert" method="post" enctype="multipart/form-data">
+
+        <!-- Step 1 -->
+        <div class="section">
+            <h2>📁 Step 1: Select Video</h2>
+            <div class="box">
+                <input type="file" name="video">
+            </div>
+            <button class="btn btn-blue">Browse Video</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="section">
+            <h2>💾 Step 2: Save Location</h2>
+            <div class="box">
+                <p>📌 File will be converted and downloaded automatically</p>
+            </div>
+            <button class="btn btn-pink" type="button">Auto Save Enabled</button>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="section">
+            <h2>⚙️ Step 3: Settings</h2>
+
+            <div class="box">
+                Frame Interval: <input type="number" value="1" name="interval">
+            </div>
+
+            <div class="box">
+                Sensitivity: <input type="number" value="12" name="sensitivity">
+            </div>
+
+            <div class="box">
+                Similarity: <input type="number" step="0.01" value="0.92" name="similarity">
+            </div>
+        </div>
+
+        <!-- Start -->
+        <button type="submit" class="btn btn-green">
+            🚀 START CONVERSION
+        </button>
+
+    </form>
+
+    <div class="status">
+        Status: Ready
+    </div>
+
+</div>
+
+</body>
+</html>

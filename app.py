@@ -1,8 +1,5 @@
-from flask import render_template
-
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, render_template
 import os
-
 
 app = Flask(__name__)
 
@@ -15,6 +12,11 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 @app.route("/")
 def home():
     return render_template("index.html")
+
+# 🔥 اینو اضافه کن
+@app.route("/app")
+def app_page():
+    return render_template("app.html")
 
 @app.route("/convert", methods=["POST"])
 def convert():
@@ -37,5 +39,5 @@ def process_video(path):
     return output_path
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # 🔥 مهم
+    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
